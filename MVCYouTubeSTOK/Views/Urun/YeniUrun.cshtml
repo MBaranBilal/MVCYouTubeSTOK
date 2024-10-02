@@ -1,0 +1,33 @@
+﻿@model MVCYouTubeSTOK.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" name="URUNAD" class="form-control" required="" maxlength="30" placeholder="(30 karakteri geçmeyin.)"/>
+    </div>
+    <div>
+        <label>Marka</label>
+        <input type="text" name="MARKA" class="form-control" required=""/>
+    </div>
+    <div>
+        <label>Kategori</label>
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"})
+    </div>
+    <div>
+        <label>Fiyat</label>
+        <input type="text" name="FIYAT" class="form-control" />
+    </div>
+    <div>
+        <label>Stok</label>
+        <input type="text" name="STOK" class="form-control" />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+</form>
+
